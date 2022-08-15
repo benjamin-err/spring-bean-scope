@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+    <!-- Defining beans to be injected -->
+    <bean id="happyFortune" class="com.spring.simple.HappyFortuneService"></bean>
+    
+    <!-- Injected via setter method -->
+    <!-- per default the scope of the bean is "singleton" -->
+    <bean id="trackCoach" class="com.spring.simple.coaches.TrackCoach" scope="prototype">
+    	<property name="fortuneService" ref="happyFortune"></property>
+    </bean>
+   
+</beans>
+
+
+
+
+
