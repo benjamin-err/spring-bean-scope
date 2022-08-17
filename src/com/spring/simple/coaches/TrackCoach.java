@@ -35,6 +35,11 @@ public class TrackCoach implements Coach, DisposableBean {
 		System.out.println("Track Coach cleaning up method");
 	}
 
+	/* 
+	 * Overriding the destroy method of DisposableBean interface to
+	 * gain the functionality of @PreDestroy callback for prototype 
+	 * scoped bean through a custom bean processor "MyCustomBeanProcessor"
+	 */
 	@Override
 	public void destroy() throws Exception {
 		System.out.println("Destroy method is called on following bean: " + this);
